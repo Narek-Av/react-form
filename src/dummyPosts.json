@@ -10,9 +10,28 @@
         "rating": 4,
         "date": "2020-04-26T08:45:41Z",
         "user": {
-          "name": "Woodrow Jordon",
-          "avatar": ""
-        }
+          "name": "Woodrow Jordon"
+        },
+        "replyes": [
+          {
+            "id": "p1c1r1",
+            "text": "Lorem dolor sit amet consectetur",
+            "rating": 2,
+            "date": "2020-04-26T16:56:48Z",
+            "user": {
+              "name": "Dulsea Carville"
+            }
+          },
+          {
+            "id": "p1c1r2",
+            "text": "Cupiditate, perferendis perspiciatis natus reiciendis aperiam qui veritatis quae est dolorum possimus",
+            "rating": 3,
+            "date": "2020-04-26T17:50:48Z",
+            "user": {
+              "name": "Morlee Ballantyne"
+            }
+          }
+        ]
       },
       {
         "id": "p1c2",
@@ -20,9 +39,9 @@
         "rating": 5,
         "date": "2021-01-14T16:56:48Z",
         "user": {
-          "name": "Morlee Ballantyne",
-          "avatar": ""
-        }
+          "name": "Morlee Ballantyne"
+        },
+        "replyes": []
       },
       {
         "id": "p1c3",
@@ -30,9 +49,9 @@
         "rating": 3,
         "date": "2019-06-06T20:10:57Z",
         "user": {
-          "name": "Dulsea Carville",
-          "avatar": ""
-        }
+          "name": "Dulsea Carville"
+        },
+        "replyes": []
       },
       {
         "id": "p1c4",
@@ -40,9 +59,9 @@
         "rating": 1,
         "date": "2020-12-30T05:52:23Z",
         "user": {
-          "name": "Woodrow Jordon",
-          "avatar": ""
-        }
+          "name": "Woodrow Jordon"
+        },
+        "replyes": []
       }
     ]
   },
@@ -57,9 +76,9 @@
         "rating": 1,
         "date": "2020-04-01T20:05:16Z",
         "user": {
-          "name": "Woodrow Jordon",
-          "avatar": ""
-        }
+          "name": "Woodrow Jordon"
+        },
+        "replyes": []
       },
       {
         "id": "p2c2",
@@ -67,18 +86,18 @@
         "rating": 1,
         "date": "2018-08-07T05:43:47Z",
         "user": {
-          "name": "Morlee Ballantyne",
-          "avatar": ""
-        }
+          "name": "Morlee Ballantyne"
+        },
+        "replyes": []
       },
       {
         "id": "p2c3",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "rating": 4,
         "user": {
-          "name": "Hope Gillespie",
-          "avatar": ""
-        }
+          "name": "Hope Gillespie"
+        },
+        "replyes": []
       },
       {
         "id": "p2c4",
@@ -86,9 +105,9 @@
         "rating": 4,
         "date": "2021-04-27T06:24:02Z",
         "user": {
-          "name": "Dulsea Carville",
-          "avatar": ""
-        }
+          "name": "Dulsea Carville"
+        },
+        "replyes": []
       },
       {
         "id": "p2c5",
@@ -96,9 +115,9 @@
         "rating": 4,
         "date": "2021-01-14T16:56:48Z",
         "user": {
-          "name": "Woodrow Jordon",
-          "avatar": ""
-        }
+          "name": "Woodrow Jordon"
+        },
+        "replyes": []
       }
     ]
   },
@@ -113,9 +132,9 @@
         "rating": 3,
         "date": "2019-10-18T20:43:18Z",
         "user": {
-          "name": "Farica Fishley",
-          "avatar": ""
-        }
+          "name": "Farica Fishley"
+        },
+        "replyes": []
       },
       {
         "id": "p3c2",
@@ -123,9 +142,9 @@
         "rating": 5,
         "date": "2021-04-27T06:24:02Z",
         "user": {
-          "name": "Dulsea Carville",
-          "avatar": ""
-        }
+          "name": "Dulsea Carville"
+        },
+        "replyes": []
       },
       {
         "id": "p3c3",
@@ -133,9 +152,9 @@
         "rating": 1,
         "date": "2019-09-07T17:07:47Z",
         "user": {
-          "name": "Woodrow Jordon",
-          "avatar": ""
-        }
+          "name": "Woodrow Jordon"
+        },
+        "replyes": []
       }
     ]
   },
@@ -150,9 +169,28 @@
         "rating": 4,
         "date": "2021-01-14T16:56:48Z",
         "user": {
-          "name": "Dulsea Carville",
-          "avatar": ""
-        }
+          "name": "Dulsea Carville"
+        },
+        "replyes": [
+          {
+            "id": "p4c1r1",
+            "text": "Lorem ipsum",
+            "rating": 4,
+            "date": "2021-01-16T16:56:48Z",
+            "user": {
+              "name": "Dulsea Carville"
+            }
+          },
+          {
+            "id": "p4c1r2",
+            "text": "Lorem ipsum",
+            "rating": 4,
+            "date": "2021-01-16T16:56:48Z",
+            "user": {
+              "name": "Dulsea Carville"
+            }
+          }
+        ]
       }
     ]
   },
@@ -173,9 +211,9 @@
         "rating": 6,
         "date": "2019-10-18T20:43:18Z",
         "user": {
-          "name": "Woodrow Jordon",
-          "avatar": ""
-        }
+          "name": "Woodrow Jordon"
+        },
+        "replyes": []
       },
       {
         "id": "p6c2",
@@ -183,9 +221,9 @@
         "rating": 7,
         "date": "2021-06-01T15:41:30Z",
         "user": {
-          "name": "Dulsea Carville",
-          "avatar": ""
-        }
+          "name": "Dulsea Carville"
+        },
+        "replyes": []
       },
       {
         "id": "p6c3",
@@ -193,9 +231,9 @@
         "rating": 5,
         "date": "2018-11-10T02:03:25Z",
         "user": {
-          "name": "Farica Fishley",
-          "avatar": ""
-        }
+          "name": "Farica Fishley"
+        },
+        "replyes": []
       },
       {
         "id": "p6c4",
@@ -203,9 +241,9 @@
         "rating": 4,
         "date": "2018-11-10T02:03:25Z",
         "user": {
-          "name": "Woodrow Jordon",
-          "avatar": ""
-        }
+          "name": "Woodrow Jordon"
+        },
+        "replyes": []
       }
     ]
   },
@@ -220,9 +258,9 @@
         "rating": 4,
         "date": "2021-01-14T16:56:48Z",
         "user": {
-          "name": "Dulsea Carville",
-          "avatar": ""
-        }
+          "name": "Dulsea Carville"
+        },
+        "replyes": []
       }
     ]
   },
@@ -237,9 +275,9 @@
         "rating": 4,
         "date": "2021-06-01T15:41:30Z",
         "user": {
-          "name": "Dulsea Carville",
-          "avatar": ""
-        }
+          "name": "Dulsea Carville"
+        },
+        "replyes": []
       },
       {
         "id": "p8c2",
@@ -247,9 +285,9 @@
         "rating": 4,
         "date": "2019-03-13T11:23:19Z",
         "user": {
-          "name": "Eda Fullegar",
-          "avatar": ""
-        }
+          "name": "Eda Fullegar"
+        },
+        "replyes": []
       },
       {
         "id": "p8c3",
@@ -257,9 +295,9 @@
         "rating": 4,
         "date": "2020-10-17T10:00:14Z",
         "user": {
-          "name": "Cherilyn Arbuckle",
-          "avatar": ""
-        }
+          "name": "Cherilyn Arbuckle"
+        },
+        "replyes": []
       },
       {
         "id": "p8c4",
@@ -267,9 +305,9 @@
         "rating": 4,
         "date": "2019-10-14T01:13:43Z",
         "user": {
-          "name": "Farica Fishley",
-          "avatar": ""
-        }
+          "name": "Farica Fishley"
+        },
+        "replyes": []
       },
       {
         "id": "p8c5",
@@ -277,9 +315,9 @@
         "rating": 4,
         "date": "2021-01-14T16:56:48Z",
         "user": {
-          "name": "Whit Londors",
-          "avatar": ""
-        }
+          "name": "Whit Londors"
+        },
+        "replyes": []
       },
       {
         "id": "p8c6",
@@ -287,9 +325,9 @@
         "rating": 4,
         "date": "2019-10-14T01:13:43Z",
         "user": {
-          "name": "Woodrow Jordon",
-          "avatar": ""
-        }
+          "name": "Woodrow Jordon"
+        },
+        "replyes": []
       }
     ]
   },
@@ -304,9 +342,9 @@
         "rating": 4,
         "date": "2020-05-31T05:24:51Z",
         "user": {
-          "name": "Whit Londors",
-          "avatar": ""
-        }
+          "name": "Whit Londors"
+        },
+        "replyes": []
       },
       {
         "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique corporis corrupti aspernatur in sapiente.",
@@ -314,9 +352,9 @@
         "rating": 4,
         "date": "2020-04-06T13:11:54Z",
         "user": {
-          "name": "Woodrow Jordon",
-          "avatar": ""
-        }
+          "name": "Woodrow Jordon"
+        },
+        "replyes": []
       },
       {
         "id": "p9c3",
@@ -324,9 +362,9 @@
         "rating": 4,
         "date": "2020-10-17T10:00:14Z",
         "user": {
-          "name": "Giacomo Liebmann",
-          "avatar": ""
-        }
+          "name": "Giacomo Liebmann"
+        },
+        "replyes": []
       },
       {
         "id": "p9c4",
@@ -334,9 +372,9 @@
         "rating": 4,
         "date": "2019-02-13T07:08:40Z",
         "user": {
-          "name": "Woodrow Jordon",
-          "avatar": ""
-        }
+          "name": "Woodrow Jordon"
+        },
+        "replyes": []
       },
       {
         "id": "p9c5",
@@ -344,9 +382,9 @@
         "rating": 4,
         "date": "2020-01-05T12:24:29Z",
         "user": {
-          "name": "Alfy Giercke",
-          "avatar": ""
-        }
+          "name": "Alfy Giercke"
+        },
+        "replyes": []
       },
       {
         "id": "p9c6",
@@ -354,9 +392,9 @@
         "rating": 4,
         "date": "2020-05-31T05:24:51Z",
         "user": {
-          "name": "Josephina Houten",
-          "avatar": ""
-        }
+          "name": "Josephina Houten"
+        },
+        "replyes": []
       },
       {
         "id": "p9c7",
@@ -364,9 +402,9 @@
         "rating": 4,
         "date": "2019-02-13T07:08:40Z",
         "user": {
-          "name": "Olia Eytel",
-          "avatar": ""
-        }
+          "name": "Olia Eytel"
+        },
+        "replyes": []
       }
     ]
   }

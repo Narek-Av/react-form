@@ -19,6 +19,10 @@
 .btn-sort::after {
   content: "\21C5";
 }
+.btn-reset {
+  margin-right: auto !important;
+  margin-left: 8px !important;
+}
 
 .average-list {
   margin: 0;
@@ -28,7 +32,7 @@
 }
 
 .average-list-item {
-  padding: 5px 10px;
+  padding: 5px 25px 5px 10px;
   margin: 10px 15px;
   background-color: #eee;
   position: relative;
@@ -53,4 +57,31 @@
 
 .hide-button::after {
   content: "\2212";
+}
+
+.rating {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+}
+
+.rating-excellent,
+.rating-good,
+.rating-bad {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: 26px;
+}
+
+.rating-excellent {
+  background-color: #00a650;
+}
+.rating-good {
+  background-color: #fec70a;
+}
+.rating-bad {
+  background-color: #e91e26;
 }

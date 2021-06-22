@@ -1,12 +1,12 @@
 import React from "react";
 
-import PostContext from "../../context/PostContext";
+import CommentAverage from "../PostSorter";
+import PostList from "../Posts";
+import ToggleButtons from "../ToggleButton";
+import Search from "../Search";
+import Pagination from "../UI/Pagination";
 
 import dummyPost from "../../dummyPosts.json";
-import CommentAverage from "../PostSorter/PostSorter";
-
-import PostList from "../Post/PostList";
-import ToggleButtons from "../ToggleButton";
 
 import "./App.css";
 
@@ -14,15 +14,100 @@ class App extends React.Component {
   state = {
     posts: dummyPost,
     selectedPosts: [],
-    togglePostHandler: (post, type) => this.togglePostHandler(post, type),
-    likeComment: (postId, commentId) => this.likeComment(postId, commentId),
-    addNewComment: (postId, comment) => this.addNewComment(postId, comment),
+    searchValue: "",
+    currentPage: 1,
+    pageItemCount: 4,
   };
 
-  likeComment(postId, commentId) {
+  updatePostList(postId, hide) {
+    this.setState(({ selectedPosts }) => ({
+      selectedPosts: !hide
+        ? [...selectedPosts, postId]
+        : selectedPosts.filter(id => id !== postId),
+    }));
+  }
+
+  filteredPostList(isSelected) {
+    const { posts, selectedPosts, searchValue, currentPage, pageItemCount } =
+      this.state;
+    const filteredPosts = posts.filter(
+      post => !selectedPosts.includes(post.id)
+    );
+
+    return searchValue
+      ? filteredPosts.filter(
+          post =>
+            post.title.toLowerCase().includes(searchValue) ||
+            post.content.toLowerCase().includes(searchValue) ||
+            post.comments.find(comment =>
+              comment.text.toLowerCase().includes(searchValue)
+            )
+        )
+      : !isSelected
+      ? filteredPosts.slice(
+          (currentPage - 1) * pageItemCount,
+          currentPage * pageItemCount
+        )
+      : filteredPosts;
+  }
+
+  addNewComment(postId, comment, commentId) {
     this.setState(state => ({
       posts: state.posts.map(post => {
-        if (post.id === postId) {
+        if (post.id !== postId) {
+          return post;
+        }
+
+        const generetId = commentId
+          ? `${post.id}${Math.random()}${post.comments.length}`
+          : `${post.id}${post.comments.length}`;
+
+        const newComment = {
+          id: generetId,
+          text: comment,
+          rating: 0,
+          date: new Date(),
+          user: {
+            name: "User User",
+          },
+        };
+
+        if (!commentId) {
+          newComment.replyes = [];
+
+          return {
+            ...post,
+            comments: [...post.comments, newComment],
+          };
+        }
+
+        const replyedComments = post.comments.map(comment => {
+          if (comment.id !== commentId) {
+            return comment;
+          }
+
+          return {
+            ...comment,
+            replyes: [...comment.replyes, newComment],
+          };
+        });
+
+        return {
+          ...post,
+          comments: replyedComments,
+        };
+      }),
+    }));
+  }
+
+  likeComment(postId, commentId, replyId) {
+    this.setState(state => ({
+      posts: state.posts.map(post => {
+        if (post.id !== postId) {
+          return post;
+        }
+
+        if (!replyId) {
           return {
             ...post,
             comments: post.comments.map(comment =>
@@ -31,60 +116,76 @@ class App extends React.Component {
                 : comment
             ),
           };
-        } else {
-          return post;
         }
-      }),
-    }));
-  }
 
-  addNewComment(postId, comment) {
-    this.setState(state => ({
-      posts: state.posts.map(post => {
-        if (post.id === postId) {
-          const newComment = {
-            id: `${post.id}${post.comments.length + 1}`,
-            text: comment,
-            rating: 0,
-            date: new Date(),
-            user: {
-              name: "User User",
-              avatar: "",
-            },
-          };
+        const replyComments = post.comments.map(comment => {
+          if (comment.id !== commentId) return comment;
 
           return {
-            ...post,
-            comments: [...post.comments, newComment],
+            ...comment,
+            replyes: comment.replyes.map(reply =>
+              reply.id === replyId
+                ? { ...reply, rating: reply.rating + 1 }
+                : reply
+            ),
           };
-        } else {
-          return post;
-        }
+        });
+
+        return {
+          ...post,
+          comments: replyComments,
+        };
       }),
     }));
   }
 
-  togglePostHandler(selectedPost, type) {
-    this.setState(({ selectedPosts }) => ({
-      selectedPosts:
-        type === "add"
-          ? [...selectedPosts, selectedPost]
-          : selectedPosts.filter(post => post.id !== selectedPost),
-    }));
+  postPagination(page) {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    this.setState({ currentPage: page });
+  }
+
+  calculateItemCount() {
+    return this.state.posts.length - this.state.selectedPosts.length;
   }
 
   render() {
     return (
-      <PostContext.Provider value={this.state}>
-        <div className="app-container">
-          <ToggleButtons />
-          <PostList />
-          <div className="average-group">
-            <CommentAverage />
-            <CommentAverage />
-          </div>
+      <div className="app-container">
+        <ToggleButtons />
+        <Search searchPost={value => this.setState({ searchValue: value })} />
+        <PostList
+          posts={this.filteredPostList()}
+          selectedPosts={this.state.selectedPosts}
+          likeComment={this.likeComment.bind(this)}
+          addNewComment={this.addNewComment.bind(this)}
+        />
+        {!this.state.searchValue &&
+          this.state.pageItemCount < this.calculateItemCount() && (
+            <Pagination
+              itemCount={this.calculateItemCount()}
+              pageItemCount={this.state.pageItemCount}
+              postPagination={selectPage => this.postPagination(selectPage)}
+              currentPage={this.state.currentPage}
+            />
+          )}
+
+        <div className="average-group">
+          <CommentAverage
+            posts={this.filteredPostList(true)}
+            updatePostList={(id, hide) => this.updatePostList(id, hide)}
+            searchValue={this.state.searchValue}
+          />
+          <CommentAverage
+            posts={this.filteredPostList(true)}
+            updatePostList={(id, hide) => this.updatePostList(id, hide)}
+            searchValue={this.state.searchValue}
+          />
         </div>
-      </PostContext.Provider>
+      </div>
     );
   }
 }
