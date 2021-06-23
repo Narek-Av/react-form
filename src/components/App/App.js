@@ -19,6 +19,18 @@ class App extends React.Component {
     pageItemCount: 4,
   };
 
+  componentDidUpdate(_, prevState) {
+    if (prevState.selectedPosts !== this.state.selectedPosts) {
+      const pagePostCount = this.filteredPostList();
+
+      pagePostCount.length === 0 &&
+        this.state.currentPage !== 1 &&
+        this.setState(prevState => ({
+          currentPage: prevState.currentPage - 1,
+        }));
+    }
+  }
+
   updatePostList(postId, hide) {
     this.setState(({ selectedPosts }) => ({
       selectedPosts: !hide
