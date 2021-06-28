@@ -1,0 +1,16 @@
+.sidebar-container {
+  flex-basis: 25%;
+  border: 1px solid #ddd;
+  background-color: #ccc;
+  border-radius: 4px;
+  position: relative;
+}
+
+.sidebar-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  flex-direction: column;
+  width: 100%;
+}

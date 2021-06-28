@@ -30,17 +30,3 @@ h2 {
 h3 {
   color: #444;
 }
-
-input,
-textarea {
-  font: inherit;
-  padding: 4px 8px;
-  margin: 0;
-  outline: none;
-  border: 1px solid #777;
-  border-radius: 3px;
-}
-input:focus {
-  background-color: #eee;
-  border-color: #333;
-}

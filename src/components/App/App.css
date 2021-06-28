@@ -1,43 +1,81 @@
+.app {
+  padding: 20px;
+}
+.app-title {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
 .app-container {
-  background-color: #f7f7f7;
-  position: relative;
-  padding-top: 2.2em;
-}
-
-.show-column {
-  position: fixed;
-  right: 3em;
-  top: 1.5em;
-}
-
-.average-group {
+  height: calc(100vh - 90px);
+  width: 80%;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  padding-bottom: 2em;
-  margin-bottom: 2em;
+  justify-content: space-between;
 }
 
-.btn {
-  border: 1px solid var(--second-color);
-  outline: none;
+/* Button */
+
+.add-btn {
+  position: absolute;
   cursor: pointer;
-  color: var(--second-color);
-  background-color: #999;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  font-size: 24px;
-  padding: 2px 8px;
-  font-weight: bold;
+  font: inherit !important;
+  font-size: 22px !important;
+  right: -10px;
+  top: -10px;
+  width: 30px !important;
+  height: 30px !important;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  outline: none;
+}
+.add-btn:hover {
+  background-color: #ddd;
 }
 
-.btn:hover {
-  background-color: var(--second-color);
-  color: #999;
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
 
-.toggle-btn {
-  font-size: 18px;
-  font-weight: normal;
-  padding: 6px 12px;
+.modal .backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+.modal-content {
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 4px 8px !important;
+  box-shadow: 0px 1px 7px 2px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  margin-bottom: 8em;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.modal-buttons button {
+  font-size: 15px !important;
+  cursor: pointer !important;
+  border: 1px solid #ccc !important;
+  outline: none !important;
+}
+.modal-buttons button:hover {
+  background-color: #ddd !important;
+}
+
+.modal-content h2 {
+  margin-bottom: 12px !important;
+  font-size: 22px !important;
 }

@@ -1,0 +1,83 @@
+.main-container {
+  flex-basis: 68%;
+  border-radius: 4px;
+  background-color: #ccc;
+}
+
+.draging-box {
+  padding: 15px;
+  margin: 1em auto;
+  display: grid;
+  grid-template-columns: 10% 40% 40% 10%;
+  grid-template-rows: repeat(4, 60px);
+  grid-template-areas:
+    ". t t ."
+    "l c c r"
+    "l c c r"
+    ". b b .";
+}
+
+.draging-box.right,
+.draging-box.left {
+  display: flex;
+  justify-content: space-between;
+}
+.draging-box.left {
+  flex-direction: row-reverse;
+}
+.draging-box.right div,
+.draging-box.left div {
+  flex-basis: 45%;
+  padding: 0;
+}
+
+.draging-box.top,
+.draging-box.bottom {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+}
+.draging-box.top {
+  flex-direction: column-reverse;
+}
+.draging-box.top div,
+.draging-box.bottom div {
+  flex-basis: 40%;
+  padding: 0;
+}
+
+.draging-box .draging-box-top,
+.draging-box .draging-box-bottom,
+.draging-box .draging-box-left,
+.draging-box .draging-box-right,
+.draging-box .draging-box-center {
+  padding: 4px 10px;
+}
+.draging-box .draging-box-top {
+  grid-area: t;
+}
+.draging-box .draging-box-right {
+  grid-area: r;
+}
+.draging-box .draging-box-bottom {
+  grid-area: b;
+}
+.draging-box .draging-box-left {
+  grid-area: l;
+}
+.draging-box .draging-box-center {
+  grid-area: c;
+}
+
+.draging-box.over div.active {
+  border: 2px dashed #eee;
+  height: 100%;
+}
+
+.draging-box.over div.select {
+  background-color: rgba(10, 120, 10, 0.1);
+  width: 100%;
+  height: 100%;
+  border-color: green;
+}

@@ -1,0 +1,42 @@
+.textarea {
+  color: #dff;
+  background-color: #ddd;
+  border: 1px solid #eee;
+  padding: 0px 20px;
+  width: 100%;
+  height: 60px;
+  transition: height 0.15s linear;
+  margin-bottom: 15px;
+  cursor: move;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.textarea textarea {
+  width: 90%;
+  height: 80%;
+  resize: none;
+  pointer-events: none;
+  font: inherit;
+}
+
+.hiden {
+  height: 0;
+  width: 0;
+  transform: translateY(-100%);
+  z-index: 30;
+  transition: all 0.15s linear;
+}
+
+.textarea.active {
+  cursor: initial;
+}
+
+.textarea.active textarea {
+  width: 60%;
+  pointer-events: initial;
+}
+
+.hiden textarea {
+  display: none;
+}
