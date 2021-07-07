@@ -1,0 +1,108 @@
+.draging-box {
+  padding: 15px;
+  margin: 1em auto;
+  display: grid;
+  grid-template-columns: 10% 40% 40% 10%;
+  grid-template-rows: 40px minmax(30px, auto) minmax(30px, auto) 40px;
+  grid-template-areas:
+    ". t t ."
+    "l c c r"
+    "l c c r"
+    ". b b .";
+}
+
+.draging-box.right,
+.draging-box.left {
+  display: flex;
+  justify-content: space-between;
+}
+.draging-box.left {
+  flex-direction: row-reverse;
+}
+.draging-box.right div,
+.draging-box.left div {
+  flex-basis: 45%;
+  padding: 0;
+}
+
+.draging-box.top,
+.draging-box.bottom {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+}
+.draging-box.top {
+  flex-direction: column-reverse;
+}
+.draging-box.top div,
+.draging-box.bottom div {
+  flex-basis: 40%;
+  padding: 0;
+}
+
+.draging-box .draging-box-top {
+  grid-area: t;
+}
+.draging-box .draging-box-right {
+  grid-area: r;
+}
+.draging-box .draging-box-bottom {
+  grid-area: b;
+}
+.draging-box .draging-box-left {
+  grid-area: l;
+}
+.draging-box .draging-box-center {
+  grid-area: c;
+}
+
+.draging-box.over div.active {
+  border: 2px dashed #eee;
+  height: 100%;
+}
+
+.draging-box.over div.select {
+  background-color: rgba(10, 120, 10, 0.1);
+  width: 100%;
+  height: 100%;
+  border-color: green;
+}
+
+/* Form Wrapper */
+
+.form-wrapper {
+  grid-area: c;
+  display: grid;
+}
+
+.form-control {
+  position: relative;
+  color: #dff;
+  background-color: #ddd;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  width: 100%;
+}
+
+.form-control input,
+.form-control textarea,
+.form-control select,
+.form-control button,
+.form-control label {
+  max-width: 140px;
+  width: 100%;
+}
+
+.form-control label {
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.form-control .add-btn {
+  width: initial;
+}

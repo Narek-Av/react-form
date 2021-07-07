@@ -3,21 +3,17 @@ import React, { Component } from "react";
 import "./Checkbox.css";
 
 export default class Checkbox extends Component {
-  state = {
-    showModal: false,
-  };
-
   handleDragStart(e) {
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("type/element", "checkbox");
 
     setTimeout(() => {
-      e.target.className = "hiden";
+      e.target.classList.add("hiden");
     }, 0);
   }
 
   handleDragEnd(e) {
-    e.target.className = "checkbox";
+    e.target.classList.remove("hiden");
   }
 
   render() {
@@ -31,27 +27,6 @@ export default class Checkbox extends Component {
         onDragEnd={e => this.handleDragEnd(e)}
       >
         <input type="checkbox" />
-        {active && (
-          <button
-            className="add-btn"
-            onClick={() => this.setState({ showModal: true })}
-          >
-            +
-          </button>
-        )}
-        {this.state.showModal && (
-          <div className="modal">
-            <div className="backdrop" />
-            <div className="modal-content">
-              <h2>Add Attributes</h2>
-              <div className="modal-buttons">
-                <button onClick={() => this.setState({ showModal: false })}>
-                  Add
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     );
   }

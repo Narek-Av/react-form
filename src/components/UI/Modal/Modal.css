@@ -1,0 +1,100 @@
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+
+.modal .backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.modal-container {
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 8px 12px;
+  box-shadow: 0px 1px 7px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 4em;
+  z-index: 15;
+  min-width: 26%;
+}
+
+.modal-content {
+  margin-bottom: 1em;
+}
+
+.modal-content h3 {
+  margin-bottom: 0.6em;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-close,
+.btn-add {
+  font-size: inherit;
+  padding: 3px 8px;
+  font: inherit;
+  border: 1px solid #ddd;
+  outline: none;
+  background-color: #aaa;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-add:hover {
+  background-color: #777;
+  color: #fff;
+}
+.btn-close {
+  margin-right: 10px;
+  background-color: #fff;
+  color: #777;
+}
+.btn-close:hover {
+  background-color: #eee;
+}
+
+.modal-buttons .btn {
+  position: relative;
+}
+
+.btn-modal {
+  background: rgb(88, 209, 88);
+}
+
+.btn-modal:hover {
+  background: rgb(48, 187, 48);
+  color: #fff;
+}
+
+.add-attributes-group {
+  margin-bottom: 0.7em;
+}
+
+.group-content {
+  margin-top: 0.4em;
+  padding: 8px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+.danger {
+  border-color: red;
+}
+.group-content input {
+  width: 60%;
+  font: inherit;
+  margin: 0.3em 0;
+  padding: 4px 6px;
+}

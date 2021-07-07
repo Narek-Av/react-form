@@ -11,17 +11,15 @@ import "./Sidebar.css";
 
 export default class Sidebar extends Component {
   render() {
-    const { droppedElement } = this.props;
-
     return (
       <div className="sidebar-container">
         <div className="sidebar-items">
-          {!droppedElement.includes("input") && <Input />}
-          {!droppedElement.includes("button") && <Button />}
-          {!droppedElement.includes("textarea") && <Textarea />}
-          {!droppedElement.includes("checkbox") && <Checkbox />}
-          {!droppedElement.includes("select") && <Select />}
-          {!droppedElement.includes("radio") && <Radio />}
+          <Input />
+          <Button />
+          <Textarea />
+          <Checkbox />
+          <Select />
+          <Radio />
         </div>
       </div>
     );

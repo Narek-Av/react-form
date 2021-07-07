@@ -21,11 +21,7 @@
 }
 
 .hiden {
-  height: 0;
-  width: 0;
-  transform: translateY(-100%);
-  z-index: 30;
-  transition: all 0.15s linear;
+  opacity: 0.4;
 }
 
 .textarea.active {
@@ -35,8 +31,4 @@
 .textarea.active textarea {
   width: 60%;
   pointer-events: initial;
-}
-
-.hiden textarea {
-  display: none;
 }
